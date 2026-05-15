@@ -1,0 +1,2455 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mind Up — Brand Guidelines v2.0</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="brand.css" />
+
+<style>
+/* ---------- v2.0 additions ---------- */
+
+/* Subsection header inside an existing section */
+.subhead {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 64px;
+  margin: 96px 0 40px;
+  align-items: baseline;
+}
+.subhead .num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--mineral);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.subhead .num span:last-child { color: var(--ink); }
+.subhead h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(36px, 4.4vw, 64px);
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  margin: 0 0 16px;
+}
+.subhead p {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.45;
+  color: var(--graphite);
+  max-width: 620px;
+  text-wrap: pretty;
+}
+
+/* Category callout block */
+.category-block {
+  background: var(--ink);
+  color: var(--bone);
+  border-radius: 4px;
+  padding: 64px 56px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  position: relative;
+  overflow: hidden;
+}
+.category-block .left {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  justify-content: space-between;
+}
+.category-block .marker {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(242, 238, 230, 0.55);
+}
+.category-block h3 {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(56px, 7vw, 112px);
+  line-height: 0.9;
+  letter-spacing: -0.025em;
+  margin: 0;
+  color: var(--accent);
+}
+.category-block .definition {
+  font-size: 19px;
+  line-height: 1.4;
+  color: var(--bone);
+  margin: 0;
+  max-width: 460px;
+}
+.category-block .grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+.category-block .grid .row {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 24px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(242, 238, 230, 0.18);
+  font-size: 15px;
+  line-height: 1.45;
+}
+.category-block .grid .row .k {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(242, 238, 230, 0.55);
+  padding-top: 1px;
+}
+.category-block .grid .row .v {
+  color: var(--bone);
+}
+
+/* Archetype — Andrés */
+.archetype {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 32px;
+  border: 1px solid var(--hairline);
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--paper);
+}
+.archetype-card {
+  padding: 40px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  border-right: 1px solid var(--hairline);
+  position: relative;
+  background:
+    radial-gradient(circle at 80% 20%, rgba(220, 242, 90, 0.18), transparent 55%),
+    var(--paper);
+}
+.archetype-card .silhouette {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  background: var(--ink);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding: 18px;
+  color: var(--bone);
+}
+.archetype-card .silhouette::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(135deg, rgba(242,238,230,0.04) 0 1px, transparent 1px 18px);
+}
+.archetype-card .silhouette .meta {
+  position: relative;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(242, 238, 230, 0.7);
+}
+.archetype-card h4 {
+  font-family: var(--font-display);
+  font-size: 56px;
+  letter-spacing: -0.025em;
+  line-height: 0.95;
+  margin: 0;
+  font-weight: 400;
+}
+.archetype-card .role {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--mineral);
+}
+.archetype-data {
+  padding: 40px 36px 40px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px 32px;
+  align-content: start;
+}
+.archetype-data .cell .k {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mineral);
+  display: block;
+  margin-bottom: 6px;
+}
+.archetype-data .cell .v {
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--graphite);
+}
+.archetype-data .cell.wide { grid-column: span 2; }
+.archetype-quote {
+  grid-column: span 2;
+  border-top: 1px solid var(--hairline);
+  padding-top: 24px;
+  margin-top: 8px;
+  font-family: var(--font-display);
+  font-size: 28px;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+.archetype-quote em { color: var(--mineral); }
+
+/* Ritual / Protocolo Claro */
+.ritual-stage {
+  background: var(--paper);
+  border: 1px solid var(--hairline);
+  border-radius: 4px;
+  padding: 48px 40px 40px;
+  position: relative;
+}
+.ritual-arc {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin: 32px 0 24px;
+}
+.ritual-step {
+  padding: 36px 28px 32px;
+  border-left: 1px solid var(--hairline);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-height: 260px;
+}
+.ritual-step:first-child { border-left: none; }
+.ritual-step .time {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mineral);
+}
+.ritual-step h5 {
+  font-family: var(--font-display);
+  font-size: 56px;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 0.9;
+  margin: 0;
+}
+.ritual-step .moment {
+  font-size: 15px;
+  color: var(--graphite);
+  line-height: 1.45;
+  margin: 0;
+}
+.ritual-step .dose {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  border-top: 1px solid var(--hairline);
+  padding-top: 12px;
+  margin-top: auto;
+}
+.ritual-step .dose .accent { color: var(--ink); padding: 2px 6px; background: var(--accent); margin-right: 6px; }
+.ritual-flow {
+  position: relative;
+  height: 40px;
+  margin: 8px -28px 0;
+  display: flex;
+  align-items: center;
+}
+.ritual-flow::before {
+  content: "";
+  position: absolute;
+  left: 16%; right: 16%; top: 50%;
+  height: 1px;
+  background: var(--ink);
+}
+.ritual-flow .node {
+  position: absolute;
+  top: 50%;
+  width: 10px; height: 10px;
+  background: var(--accent);
+  border: 1px solid var(--ink);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+.ritual-flow .node.n1 { left: 16.66%; }
+.ritual-flow .node.n2 { left: 50%; }
+.ritual-flow .node.n3 { left: 83.33%; background: var(--ink); }
+.ritual-label {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 36px;
+  letter-spacing: -0.02em;
+  margin: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+}
+.ritual-label .tag {
+  font-family: var(--font-mono);
+  font-style: normal;
+  font-size: 11px;
+  padding: 5px 10px;
+}
+
+/* Marco / Principios */
+.marco-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+}
+.principle {
+  padding: 48px 36px 44px;
+  border-right: 1px solid var(--hairline);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-height: 360px;
+  background: var(--paper);
+}
+.principle:last-child { border-right: none; }
+.principle .marker {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--mineral);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.principle .marker .dot {
+  width: 8px; height: 8px;
+  background: var(--accent);
+  display: inline-block;
+}
+.principle h4 {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  margin: 0;
+  color: var(--ink);
+  text-wrap: balance;
+}
+.principle p {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--graphite);
+  margin: 0;
+}
+.principle .footer-note {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--mineral);
+  margin-top: auto;
+  padding-top: 18px;
+  border-top: 1px solid var(--hairline);
+}
+
+/* Type decision table */
+.type-decision {
+  border: 1px solid var(--hairline);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 48px;
+}
+.type-decision .row {
+  display: grid;
+  grid-template-columns: 220px 1fr 1fr;
+  border-bottom: 1px solid var(--hairline);
+}
+.type-decision .row:last-child { border-bottom: none; }
+.type-decision .row.head {
+  background: var(--ink);
+  color: var(--bone);
+}
+.type-decision .cell {
+  padding: 22px 24px;
+  border-right: 1px solid var(--hairline);
+}
+.type-decision .row.head .cell {
+  border-right: 1px solid rgba(242, 238, 230, 0.15);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(242, 238, 230, 0.7);
+}
+.type-decision .cell:last-child { border-right: none; }
+.type-decision .cell .specimen-tag {
+  font-family: var(--font-display);
+  font-size: 28px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+.type-decision .cell .specimen-tag.geist {
+  font-family: var(--font-sans);
+  font-weight: 600;
+}
+.type-decision .cell .specimen-tag.mono {
+  font-family: var(--font-mono);
+  font-size: 18px;
+  letter-spacing: 0;
+}
+.type-decision .cell .use {
+  font-size: 15px;
+  color: var(--graphite);
+  line-height: 1.45;
+}
+.type-decision .cell .example {
+  font-size: 13px;
+  color: var(--mineral);
+  font-family: var(--font-mono);
+  letter-spacing: 0.02em;
+  margin-top: 8px;
+}
+
+.golden-rule {
+  margin-top: 32px;
+  padding: 28px 32px;
+  background: var(--accent);
+  color: var(--ink);
+  border-radius: 4px;
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 24px;
+  align-items: center;
+}
+.golden-rule .label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.golden-rule .text {
+  font-family: var(--font-display);
+  font-size: 28px;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  font-style: italic;
+}
+
+/* Tension / costly truth examples */
+.tension-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 32px;
+}
+.tension-card {
+  background: var(--paper);
+  border: 1px solid var(--hairline);
+  padding: 28px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-height: 200px;
+}
+.tension-card .num {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mineral);
+}
+.tension-card .quote {
+  font-family: var(--font-display);
+  font-size: 26px;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  margin: 0;
+  flex: 1;
+}
+.tension-card .quote em { color: var(--accent); font-style: italic; }
+
+/* Cinema direction */
+.cinema {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+  margin-top: 32px;
+}
+.cinema .cell {
+  padding: 28px 24px;
+  border-right: 1px solid var(--hairline);
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.cinema .cell:last-child { border-right: none; }
+.cinema .cell .label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mineral);
+}
+.cinema .cell .value {
+  font-family: var(--font-display);
+  font-size: 32px;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+.cinema .cell p { margin: 0; font-size: 14px; color: var(--graphite); line-height: 1.4; }
+
+.cinema-ref {
+  margin-top: 24px;
+  padding: 24px 28px;
+  border: 1px solid var(--hairline);
+  border-radius: 4px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.cinema-ref .label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mineral);
+  flex-shrink: 0;
+  min-width: 180px;
+}
+.cinema-ref .quote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 24px;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  margin: 0;
+}
+
+/* Motion section */
+.motion-hero {
+  background: var(--ink);
+  color: var(--bone);
+  border-radius: 4px;
+  padding: 80px 56px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.motion-hero .left .marker {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(242, 238, 230, 0.55);
+  margin-bottom: 16px;
+  display: block;
+}
+.motion-hero .left .rule {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(40px, 5vw, 72px);
+  line-height: 0.95;
+  letter-spacing: -0.025em;
+  margin: 0;
+}
+.motion-hero .left .rule .accent { color: var(--accent); }
+
+.motion-anim {
+  position: relative;
+  height: 280px;
+  background:
+    repeating-linear-gradient(0deg, transparent 0 39px, rgba(242,238,230,0.06) 39px 40px),
+    repeating-linear-gradient(90deg, transparent 0 39px, rgba(242,238,230,0.06) 39px 40px);
+  border-radius: 4px;
+}
+.motion-anim .arrow-anim {
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  width: 80px; height: 80px;
+  background: var(--accent);
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  transform: translateX(-50%);
+  animation: liftUp 3.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+@keyframes liftUp {
+  0%   { transform: translateX(-50%) translateY(0) scale(1); opacity: 1; }
+  60%  { transform: translateX(-50%) translateY(-160px) scale(0.88); opacity: 1; }
+  80%  { transform: translateX(-50%) translateY(-160px) scale(0.88); opacity: 0; }
+  81%  { transform: translateX(-50%) translateY(0) scale(1); opacity: 0; }
+  100% { transform: translateX(-50%) translateY(0) scale(1); opacity: 1; }
+}
+.motion-anim .axis {
+  position: absolute;
+  top: 16px; left: 16px;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(242, 238, 230, 0.45);
+}
+.motion-anim .axis.right { left: auto; right: 16px; text-align: right; }
+
+.motion-specs {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+  border: 1px solid var(--hairline);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 32px;
+}
+.motion-specs .spec {
+  padding: 24px 22px;
+  border-right: 1px solid var(--hairline);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 160px;
+}
+.motion-specs .spec:last-child { border-right: none; }
+.motion-specs .spec .k {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mineral);
+}
+.motion-specs .spec .v {
+  font-family: var(--font-display);
+  font-size: 32px;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+.motion-specs .spec .v .unit { font-family: var(--font-mono); font-size: 14px; color: var(--mineral); margin-left: 4px; }
+.motion-specs .spec p { margin: 0; font-size: 12px; color: var(--graphite); line-height: 1.4; }
+
+.motion-platform {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+}
+.motion-platform .card {
+  padding: 24px;
+  background: var(--paper);
+  border: 1px solid var(--hairline);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.motion-platform .card h5 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+.motion-platform .card .label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mineral);
+}
+.motion-platform .card p { margin: 0; font-size: 14px; color: var(--graphite); line-height: 1.5; }
+
+/* Channel hierarchy */
+.channels {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  margin-bottom: 48px;
+}
+.channel {
+  padding: 36px 32px;
+  border-right: 1px solid var(--hairline);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-height: 280px;
+  position: relative;
+}
+.channel:last-child { border-right: none; }
+.channel .stage {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-ink);
+  background: var(--accent);
+  align-self: flex-start;
+  padding: 4px 10px;
+}
+.channel h5 {
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+  margin: 0;
+}
+.channel .platform {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--mineral);
+}
+.channel .function {
+  font-size: 15px;
+  color: var(--graphite);
+  line-height: 1.5;
+  margin: 0;
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid var(--hairline);
+}
+
+/* Community section */
+.community-hero {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 32px;
+  margin-bottom: 48px;
+}
+.community-hero .left {
+  background: var(--ink);
+  color: var(--bone);
+  padding: 56px 48px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 32px;
+  min-height: 380px;
+}
+.community-hero .left .declaration {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(40px, 5vw, 64px);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+.community-hero .left .declaration .accent { color: var(--accent); }
+.community-hero .left .marker {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(242, 238, 230, 0.55);
+}
+.community-hero .right {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 16px;
+}
+.community-card {
+  background: var(--paper);
+  border: 1px solid var(--hairline);
+  padding: 28px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.community-card .label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mineral);
+}
+.community-card h5 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+.community-card p { margin: 0; font-size: 14px; color: var(--graphite); line-height: 1.5; }
+
+.share-formats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.share-card {
+  background: var(--bone);
+  border: 1px solid var(--hairline);
+  padding: 24px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-height: 200px;
+}
+.share-card .num {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mineral);
+}
+.share-card .title {
+  font-family: var(--font-display);
+  font-size: 24px;
+  letter-spacing: -0.02em;
+  margin: 0;
+  line-height: 1.05;
+}
+.share-card p { margin: 0; font-size: 13px; color: var(--graphite); line-height: 1.45; }
+.share-card .stack-mini {
+  margin-top: auto;
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.share-card .pill {
+  padding: 3px 8px;
+  border: 1px solid var(--hairline-strong);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.share-card .pill.on { background: var(--accent); border-color: transparent; }
+
+.lex-rows {
+  margin-top: 32px;
+  border: 1px solid var(--hairline);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.lex-row {
+  display: grid;
+  grid-template-columns: 200px 1fr 1fr;
+  border-bottom: 1px solid var(--hairline);
+}
+.lex-row:last-child { border-bottom: none; }
+.lex-row .label {
+  padding: 22px 24px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--mineral);
+  border-right: 1px solid var(--hairline);
+  background: var(--paper);
+}
+.lex-row .out, .lex-row .in {
+  padding: 22px 24px;
+  font-family: var(--font-display);
+  font-size: 22px;
+  letter-spacing: -0.015em;
+  line-height: 1.1;
+}
+.lex-row .out {
+  border-right: 1px solid var(--hairline);
+  color: var(--mineral);
+  text-decoration: line-through;
+  text-decoration-color: var(--hairline-strong);
+}
+.lex-row .in {
+  color: var(--ink);
+}
+.lex-row .in::before {
+  content: "→";
+  font-family: var(--font-mono);
+  font-size: 14px;
+  margin-right: 12px;
+  color: var(--accent);
+  letter-spacing: 0;
+}
+
+/* Section title with two-line emphasis */
+.section-title em.muted { color: var(--mineral); }
+
+/* Responsive bits for new components */
+@media (max-width: 1080px) {
+  .subhead { grid-template-columns: 1fr; gap: 16px; margin: 64px 0 32px; }
+  .category-block { grid-template-columns: 1fr; padding: 40px 32px; gap: 32px; }
+  .archetype { grid-template-columns: 1fr; }
+  .archetype-card { border-right: none; border-bottom: 1px solid var(--hairline); }
+  .archetype-data { padding: 32px 28px; grid-template-columns: 1fr; }
+  .archetype-data .cell.wide { grid-column: span 1; }
+  .archetype-quote { grid-column: span 1; }
+  .ritual-arc { grid-template-columns: 1fr; }
+  .ritual-step { border-left: none; border-top: 1px solid var(--hairline); }
+  .ritual-step:first-child { border-top: none; }
+  .marco-grid { grid-template-columns: 1fr; }
+  .principle { border-right: none; border-bottom: 1px solid var(--hairline); }
+  .type-decision .row { grid-template-columns: 1fr; }
+  .type-decision .cell { border-right: none; border-bottom: 1px solid var(--hairline); }
+  .tension-grid { grid-template-columns: 1fr; }
+  .cinema { grid-template-columns: 1fr 1fr; }
+  .motion-hero { grid-template-columns: 1fr; padding: 48px 32px; gap: 32px; }
+  .motion-specs { grid-template-columns: 1fr 1fr; }
+  .motion-platform { grid-template-columns: 1fr; }
+  .channels { grid-template-columns: 1fr; }
+  .channel { border-right: none; border-bottom: 1px solid var(--hairline); }
+  .community-hero { grid-template-columns: 1fr; }
+  .share-formats { grid-template-columns: 1fr; }
+  .lex-row { grid-template-columns: 1fr; }
+  .lex-row .label, .lex-row .out, .lex-row .in {
+    border-right: none; border-bottom: 1px solid var(--hairline);
+  }
+}
+</style>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<!-- ===================== Top Nav ===================== -->
+<nav class="topnav" data-screen-label="Top nav">
+  <div class="topnav-inner">
+    <div class="topnav-left">
+      <span class="topnav-mark"><span class="up">MIND&nbsp;UP</span><span class="arrow"></span></span>
+      <span class="topnav-meta">Brand Guidelines · v2.0 · Claridad Sostenida</span>
+    </div>
+    <div class="topnav-toc">
+      <a href="#estrategia">01 Estrategia</a>
+      <a href="#marco">02 Marco</a>
+      <a href="#logo">03 Logo</a>
+      <a href="#color">04 Color</a>
+      <a href="#tipografia">05 Tipo</a>
+      <a href="#voz">06 Voz</a>
+      <a href="#sistema">07 Sistema</a>
+      <a href="#motion">08 Motion</a>
+      <a href="#aplicaciones">09 Apps</a>
+      <a href="#comunidad">10 Comunidad</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===================== Hero ===================== -->
+<header class="hero wrap" data-screen-label="00 Hero">
+  <div class="hero-grid">
+    <div class="hero-top">
+      <span class="tag"><span class="dot"></span> Identidad de marca · 2026</span>
+      <span class="eyebrow">v2.0 · Edición Claridad Sostenida · Documento confidencial</span>
+    </div>
+
+    <h1 class="wordmark-hero" aria-label="Mind Up">MIND&nbsp;UP<span class="arrow" aria-hidden="true"></span></h1>
+
+    <p class="hero-tagline">
+      Claridad <em>como estatus.</em> No la riqueza, no el hustle —<br>
+      una mente que piensa mejor. Este documento es su lenguaje.
+    </p>
+
+    <div class="hero-meta">
+      <div class="cell">
+        <span class="label">Categoría</span>
+        <span class="value">Rendimiento cognitivo<br>+ Bienestar mental</span>
+      </div>
+      <div class="cell">
+        <span class="label">Audiencia</span>
+        <span class="value">Profesionales 25–40<br>Latinoamérica</span>
+      </div>
+      <div class="cell">
+        <span class="label">Formato</span>
+        <span class="value">Suplementos · IG · Web</span>
+      </div>
+      <div class="cell">
+        <span class="label">Versión</span>
+        <span class="value">2.0 — Claridad Sostenida<br>Mayo 2026</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== 01 — Estrategia ===================== -->
+<section id="estrategia" class="section" data-screen-label="01 Estrategia">
+  <div class="wrap">
+    <header class="section-head">
+      <div class="section-num"><span>01</span><span>Estrategia</span></div>
+      <div>
+        <h2 class="section-title">La marca antes del producto.</h2>
+        <p class="section-lede">
+          Mind Up no compite con suplementos. Compite con la idea de que el rendimiento mental
+          se logra por fuerza bruta. Lo que sigue es la espina dorsal estratégica que sostiene
+          cada decisión: del nombre al packaging, del post de Instagram al script de una llamada.
+        </p>
+      </div>
+    </header>
+
+    <div class="strategy-grid">
+
+      <div class="strategy-card wide">
+        <span class="eyebrow">Propósito</span>
+        <h3>Elevar la forma en que la gente piensa, decide y rinde — sin gritar.</h3>
+        <p>Existimos para que la próxima generación de profesionales latinoamericanos trate a su mente
+        como la herramienta más afilada que tienen. Con respeto, con datos, con disciplina silenciosa.</p>
+      </div>
+
+      <div class="strategy-card">
+        <span class="eyebrow">Misión</span>
+        <h3>Hacer del rendimiento cognitivo un hábito accesible y respaldado por evidencia.</h3>
+        <p>Cada fórmula, cada frase y cada producto debe pasar tres filtros: ¿hay ciencia detrás?,
+        ¿se sostiene en el tiempo?, ¿eleva al usuario sin volverlo dependiente?</p>
+      </div>
+
+      <div class="strategy-card">
+        <span class="eyebrow">Visión</span>
+        <h3>Ser la marca de referencia mental de LATAM para 2030.</h3>
+        <p>Cuando un profesional latinoamericano piense en "claridad", "foco" o "descanso reparador",
+        Mind Up debe ser el primer nombre — antes del café, antes de la dopamina barata.</p>
+      </div>
+
+      <div class="strategy-card wide">
+        <span class="eyebrow">Posicionamiento</span>
+        <h3>Para profesionales que toman decisiones difíciles, Mind Up es el sistema de hábitos y fórmulas con respaldo científico que convierte la claridad mental en una ventaja competitiva — sin la estética agresiva del biohacking ni los clichés de la motivación.</h3>
+      </div>
+
+      <div class="strategy-card third">
+        <span class="eyebrow">USP</span>
+        <h3>Ciencia, sin teatro.</h3>
+        <p>Fórmulas con dosis activas reales, comunicadas con precisión editorial, no con marketing inflado.</p>
+      </div>
+
+      <div class="strategy-card third">
+        <span class="eyebrow">Promesa</span>
+        <h3>Pertenecer es elevarse.</h3>
+        <p>Mind Up no es producto: es una comunidad selecta para los que ya decidieron que su mente es su mayor activo.</p>
+      </div>
+
+      <div class="strategy-card third">
+        <span class="eyebrow">Insight</span>
+        <h3>Más información ≠ mejor decisión.</h3>
+        <p>La gente no quiere otra newsletter. Quiere un filtro, un sistema, un atajo legítimo.</p>
+      </div>
+
+    </div>
+
+    <!-- ─── Categoría propia ─── -->
+    <div class="subhead">
+      <div class="num"><span>01·a</span><span>Categoría</span></div>
+      <div>
+        <h3>Mind Up no compite. Crea categoría.</h3>
+        <p>El espacio de los nootrópicos y adaptógenos está lleno de productos sueltos.
+        Mind Up no se sienta ahí. Define una categoría adyacente — más simple, más obvia, imposible de imitar sin copiar el marco.</p>
+      </div>
+    </div>
+
+    <div class="category-block">
+      <div class="left">
+        <span class="marker">Categoría propia · 2026</span>
+        <h3>Claridad<br>Sostenida.</h3>
+        <p class="definition">Un protocolo de tres fórmulas — Focus, Calm, Sleep —
+        que opera como sistema, no como producto individual.</p>
+      </div>
+      <div class="grid">
+        <div class="row">
+          <div class="k">Nombre</div>
+          <div class="v">Claridad Sostenida</div>
+        </div>
+        <div class="row">
+          <div class="k">Reemplaza</div>
+          <div class="v">El biohacking agresivo, la suplementación sin sistema y el café como solución.</div>
+        </div>
+        <div class="row">
+          <div class="k">Propone</div>
+          <div class="v">Un protocolo de tres fórmulas (Focus · Calm · Sleep) que opera como sistema, no como producto individual.</div>
+        </div>
+        <div class="row">
+          <div class="k">Frase</div>
+          <div class="v" style="font-family: var(--font-display); font-style: italic; font-size: 22px; line-height: 1.15;">Pensar mejor, todos los días, sin esfuerzo extra.</div>
+        </div>
+      </div>
+    </div>
+
+    <h4 class="eyebrow" style="margin: 72px 0 20px;">Valores fundacionales</h4>
+    <div class="values">
+      <div class="value">
+        <span class="num">01</span>
+        <h4>Evidencia primero</h4>
+        <p>Hablamos cuando hay un estudio detrás. Callamos cuando no.</p>
+      </div>
+      <div class="value">
+        <span class="num">02</span>
+        <h4>Sofisticación silenciosa</h4>
+        <p>No necesitamos gritar. La calidad se nota sin subrayarla.</p>
+      </div>
+      <div class="value">
+        <span class="num">03</span>
+        <h4>Comunidad selecta</h4>
+        <p>Pertenecer importa. Filtrar no es exclusión, es estándar.</p>
+      </div>
+      <div class="value">
+        <span class="num">04</span>
+        <h4>Provocación útil</h4>
+        <p>Decimos lo incómodo si es cierto. Nunca por estética.</p>
+      </div>
+      <div class="value">
+        <span class="num">05</span>
+        <h4>Diseño como respeto</h4>
+        <p>Cada detalle visual es una promesa de que el producto está al mismo nivel.</p>
+      </div>
+    </div>
+
+    <!-- ─── Quién es: Andrés ─── -->
+    <div class="subhead">
+      <div class="num"><span>01·b</span><span>Quién es</span></div>
+      <div>
+        <h3>Andrés <em class="serif" style="color: var(--mineral);">— nombre simbólico, no literal.</em></h3>
+        <p>El arquetipo del miembro Mind Up. No es un buyer persona genérico — es la persona específica
+        en cuya cabeza queremos vivir. Cuando dudes sobre una decisión de copy, color o producto,
+        pregúntate qué pensaría Andrés.</p>
+      </div>
+    </div>
+
+    <div class="archetype">
+      <div class="archetype-card">
+        <span class="role">Arquetipo · The Conscious Professional</span>
+        <h4>Andrés.</h4>
+        <div class="silhouette">
+          <span class="meta">Retrato editorial · Hora dorada · Madera + ventana · 3500K</span>
+        </div>
+      </div>
+      <div class="archetype-data">
+        <div class="cell">
+          <span class="k">Edad</span>
+          <span class="v">32–38 años</span>
+        </div>
+        <div class="cell">
+          <span class="k">Ciudad</span>
+          <span class="v">Capital latinoamericana — CDMX, Bogotá, Lima, Santiago, Buenos Aires.</span>
+        </div>
+        <div class="cell">
+          <span class="k">Ocupación</span>
+          <span class="v">Profesional del conocimiento. Tech, finanzas, consultoría o creatividad estratégica.</span>
+        </div>
+        <div class="cell">
+          <span class="k">Hábitos</span>
+          <span class="v">Ejercicio regular. Mal sueño los domingos. Consume contenido de performance en inglés.</span>
+        </div>
+        <div class="cell wide">
+          <span class="k">Frustración con marcas de bienestar</span>
+          <span class="v">Le hablan como principiante, prometen demasiado, no muestran la ciencia detrás. Tono motivacional barato.</span>
+        </div>
+        <div class="cell">
+          <span class="k">Qué quiere proyectar</span>
+          <span class="v">Que ya llegó. Que no necesita que le expliquen.</span>
+        </div>
+        <div class="cell">
+          <span class="k">Qué oculta</span>
+          <span class="v">Que todavía improvisa más de lo que planifica.</span>
+        </div>
+        <div class="cell wide">
+          <span class="k">Por qué Mind Up es su marca</span>
+          <span class="v">Porque lo trata como par. No le ofrece motivación — le ofrece pertenencia a un estándar.</span>
+        </div>
+        <div class="archetype-quote">
+          Mind Up no le explica a Andrés. <em>Le confirma lo que ya sabía.</em>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── El Ritual ─── -->
+    <div class="subhead">
+      <div class="num"><span>01·c</span><span>El Ritual</span></div>
+      <div>
+        <h3>Tres momentos del día.<br>Un solo sistema.</h3>
+        <p>Los tres productos corresponden a tres ventanas biológicas. No es conveniencia
+        comercial — es arquitectura de hábito. Mind Up no vende cápsulas: vende un protocolo
+        con horarios. El ritual tiene nombre propio.</p>
+      </div>
+    </div>
+
+    <div class="ritual-stage">
+      <div class="ritual-label">
+        <span>El Protocolo <em>Claro.</em></span>
+        <span class="tag"><span class="dot"></span> Mañana → Tarde → Noche</span>
+      </div>
+      <div class="ritual-arc">
+        <div class="ritual-step">
+          <span class="time">07:00 — 09:00 · Mañana</span>
+          <h5>Focus.</h5>
+          <p class="moment">Antes del trabajo profundo. Cuando la mañana decide el día.</p>
+          <div class="dose"><span class="accent">400mg</span>L-Teanina · Cafeína · Ratio 2:1</div>
+        </div>
+        <div class="ritual-step">
+          <span class="time">15:00 — 18:00 · Tarde/Noche</span>
+          <h5>Calm.</h5>
+          <p class="moment">Después del pico de cortisol. La transición que casi nadie diseña.</p>
+          <div class="dose"><span class="accent">300mg</span>Ashwagandha KSM-66 · Magnesio bisglicinato</div>
+        </div>
+        <div class="ritual-step">
+          <span class="time">21:30 — 22:30 · Noche</span>
+          <h5>Sleep.</h5>
+          <p class="moment">30 min antes de dormir. Sueño profundo, despertar limpio.</p>
+          <div class="dose"><span class="accent">200mg</span>Glicina · Magnesio · Apigenina</div>
+        </div>
+      </div>
+      <div class="ritual-flow">
+        <span class="node n1"></span>
+        <span class="node n2"></span>
+        <span class="node n3"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 02 — El Marco ===================== -->
+<section id="marco" class="section" data-screen-label="02 El Marco">
+  <div class="wrap">
+    <header class="section-head">
+      <div class="section-num"><span>02</span><span>El Marco</span></div>
+      <div>
+        <h2 class="section-title">Claridad Sostenida.<br><em class="muted">Tres principios.</em></h2>
+        <p class="section-lede">
+          No son valores de marca — son afirmaciones científicas con consecuencias de diseño.
+          Cualquier decisión de producto, fórmula, copy o packaging debe sostenerse contra estos
+          tres principios antes de llegar al mercado.
+        </p>
+      </div>
+    </header>
+
+    <div class="marco-grid">
+      <div class="principle">
+        <span class="marker"><span class="dot"></span> Principio 01</span>
+        <h4>La claridad no se fuerza. <em>Se sostiene.</em></h4>
+        <p>El rendimiento cognitivo no viene de más esfuerzo. Viene de reducir la fricción
+        interna — el ruido hormonal, el sueño superficial, la atención fragmentada. Nuestra
+        misión es retirar obstáculos, no apilar estímulos.</p>
+        <span class="footer-note">Consecuencia de diseño · Restar antes de sumar.</span>
+      </div>
+      <div class="principle">
+        <span class="marker"><span class="dot"></span> Principio 02</span>
+        <h4>El cuerpo primero. <em>La mente después.</em></h4>
+        <p>Sin sueño reparador y sin control del cortisol, el foco es imposible. El orden importa.
+        Por eso el protocolo empieza por la noche, no por la mañana: dormir mejor es la palanca
+        más rentable del sistema.</p>
+        <span class="footer-note">Consecuencia de diseño · Empezamos por Sleep, no por Focus.</span>
+      </div>
+      <div class="principle">
+        <span class="marker"><span class="dot"></span> Principio 03</span>
+        <h4>El sistema gana <em>al hábito suelto.</em></h4>
+        <p>Un suplemento aislado es placebo de lujo. Un protocolo, en cambio, es ventaja compuesta.
+        Cada fórmula refuerza la siguiente y el conjunto produce el efecto. Vendemos sistema o
+        no vendemos.</p>
+        <span class="footer-note">Consecuencia de diseño · Stack, no SKU individual.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 03 — Logo ===================== -->
+<section id="logo" class="section" data-screen-label="03 Logo">
+  <div class="wrap">
+    <header class="section-head">
+      <div class="section-num"><span>03</span><span>Logo</span></div>
+      <div>
+        <h2 class="section-title">El nombre <em class="serif"><i>es</i></em> el logo.</h2>
+        <p class="section-lede">
+          Mind Up se firma como wordmark — tipográfico, sin floritura. La única licencia es una flecha
+          triangular que reemplaza puntos de fuga: un símbolo mínimo del concepto "up". Construido en
+          Geist Bold, con tracking comprimido a −0.055em para densidad y carácter.
+        </p>
+      </div>
+    </header>
+
+    <div class="logo-grid">
+      <div class="logo-stage full">
+        <span class="wordmark">MIND<span class="up">&nbsp;UP</span><span class="arrow"></span></span>
+        <span class="label">Principal / Light · Bone #F2EEE6</span>
+      </div>
+    </div>
+
+    <div class="logo-row3">
+      <div class="logo-stage dark">
+        <span class="wordmark compact">MIND&nbsp;UP<span class="arrow"></span></span>
+        <span class="label">Inversa / Dark · Ink #0E0E0C</span>
+      </div>
+      <div class="logo-stage accent">
+        <span class="wordmark compact">MIND&nbsp;UP<span class="arrow"></span></span>
+        <span class="label">Acento / Lift</span>
+      </div>
+      <div class="logo-stage">
+        <span class="wordmark small">MIND&nbsp;UP<span class="arrow"></span></span>
+        <span class="label">Mínima · ≥ 22px digital</span>
+      </div>
+    </div>
+
+    <div style="margin-top: 56px; display:grid; grid-template-columns: 1fr 1fr; gap: 32px;">
+      <div class="clearspace">
+        <div class="clearspace-inner">
+          <span class="wordmark compact">MIND&nbsp;UP<span class="arrow"></span></span>
+        </div>
+        <div class="clearspace-note">Espacio de protección = altura-x del wordmark en cada lado. Mínimo absoluto.</div>
+      </div>
+
+      <div>
+        <h4 class="eyebrow" style="margin: 0 0 18px;">Construcción</h4>
+        <div style="font-family: var(--font-mono); font-size: 13px; line-height: 1.9; color: var(--graphite);">
+          <div>Tipografía &nbsp;·&nbsp; Geist Bold (700)</div>
+          <div>Tracking &nbsp;·&nbsp; −0.055em</div>
+          <div>Caja alta &nbsp;·&nbsp; MIND UP</div>
+          <div>Marca de acento &nbsp;·&nbsp; ▲ triángulo equilátero, 50% altura-x</div>
+          <div>Color de la flecha &nbsp;·&nbsp; siempre Lift (excepto en fondo Lift → Ink)</div>
+          <div>Anclaje de la flecha &nbsp;·&nbsp; base alineada con la baseline del wordmark</div>
+          <div>Tamaño mínimo &nbsp;·&nbsp; 22px digital · 14mm print</div>
+        </div>
+      </div>
+    </div>
+
+    <h4 class="eyebrow" style="margin: 80px 0 20px;">Qué no hacer</h4>
+    <div class="donts">
+      <div class="dont">
+        <span class="x">✕</span>
+        <span class="wordmark small" style="transform: skewX(-12deg);">MIND&nbsp;UP<span class="arrow"></span></span>
+        <span class="caption">No inclinar / italizar</span>
+      </div>
+      <div class="dont">
+        <span class="x">✕</span>
+        <span class="wordmark small" style="font-family: 'Times New Roman', serif; font-weight: 400;">MIND&nbsp;UP</span>
+        <span class="caption">No sustituir la tipografía</span>
+      </div>
+      <div class="dont">
+        <span class="x">✕</span>
+        <span class="wordmark small" style="background: linear-gradient(90deg, #FF5A2E, #2D3FFF); -webkit-background-clip: text; background-clip: text; color: transparent;">MIND&nbsp;UP<span class="arrow" style="background: #2D3FFF;"></span></span>
+        <span class="caption">No aplicar gradientes</span>
+      </div>
+      <div class="dont">
+        <span class="x">✕</span>
+        <span class="wordmark small" style="letter-spacing: 0.12em;">MIND UP<span class="arrow"></span></span>
+        <span class="caption">No alterar el tracking</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 04 — Color ===================== -->
+<section id="color" class="section" data-screen-label="04 Color">
+  <div class="wrap">
+    <header class="section-head">
+      <div class="section-num"><span>04</span><span>Color</span></div>
+      <div>
+        <h2 class="section-title">Luminoso, no claro.<br>Profundo, no oscuro.</h2>
+        <p class="section-lede">
+          Una paleta corta y disciplinada. Bone como aire, Ink como autoridad, Lift como señal.
+          Halo y Ember están en reserva para campañas — nunca compiten con Lift en el mismo plano.
+        </p>
+      </div>
+    </header>
+
+    <div class="color-grid">
+      <div class="swatch bone">
+        <div class="swatch-top">
+          <h3 class="swatch-name">Bone</h3>
+          <span class="swatch-role">Base / Aire</span>
+        </div>
+        <div class="swatch-codes">
+          <span class="k">HEX</span><span>#F2EEE6</span>
+          <span class="k">RGB</span><span>242 · 238 · 230</span>
+          <span class="k">CMYK</span><span>2 · 3 · 8 · 0</span>
+          <span class="k">Pantone</span><span>11-0507 TPX</span>
+        </div>
+      </div>
+      <div class="swatch ink">
+        <div class="swatch-top">
+          <h3 class="swatch-name">Ink</h3>
+          <span class="swatch-role">Autoridad</span>
+        </div>
+        <div class="swatch-codes">
+          <span class="k">HEX</span><span>#0E0E0C</span>
+          <span class="k">RGB</span><span>14 · 14 · 12</span>
+          <span class="k">CMYK</span><span>72 · 67 · 65 · 86</span>
+          <span class="k">Pantone</span><span>Black 6 C</span>
+        </div>
+      </div>
+      <div class="swatch lift">
+        <div class="swatch-top">
+          <h3 class="swatch-name">Lift</h3>
+          <span class="swatch-role">Señal / Acento</span>
+        </div>
+        <div class="swatch-codes">
+          <span class="k">HEX</span><span>#DCF25A</span>
+          <span class="k">RGB</span><span>220 · 242 · 90</span>
+          <span class="k">CMYK</span><span>16 · 0 · 78 · 0</span>
+          <span class="k">Pantone</span><span>389 C</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="color-row">
+      <div class="swatch paper">
+        <div class="swatch-top">
+          <h3 class="swatch-name serif" style="font-size:28px;">Paper</h3>
+          <span class="swatch-role">Soporte UI</span>
+        </div>
+        <div class="swatch-codes">
+          <span class="k">HEX</span><span>#FAF7F1</span>
+          <span class="k">USO</span><span>Cards · superficies</span>
+        </div>
+      </div>
+      <div class="swatch graphite">
+        <div class="swatch-top">
+          <h3 class="swatch-name serif" style="font-size:28px;">Graphite</h3>
+          <span class="swatch-role">Texto secundario</span>
+        </div>
+        <div class="swatch-codes">
+          <span class="k">HEX</span><span>#2A2925</span>
+          <span class="k">USO</span><span>Body copy largo</span>
+        </div>
+      </div>
+      <div class="swatch mineral">
+        <div class="swatch-top">
+          <h3 class="swatch-name serif" style="font-size:28px;">Mineral</h3>
+          <span class="swatch-role">Texto terciario</span>
+        </div>
+        <div class="swatch-codes">
+          <span class="k">HEX</span><span>#88847C</span>
+          <span class="k">USO</span><span>Captions · meta</span>
+        </div>
+      </div>
+      <div class="swatch halo">
+        <div class="swatch-top">
+          <h3 class="swatch-name serif" style="font-size:28px;">Halo</h3>
+          <span class="swatch-role">Reserva · Campaña</span>
+        </div>
+        <div class="swatch-codes">
+          <span class="k">HEX</span><span>#2D3FFF</span>
+          <span class="k">USO</span><span>Foco / Claridad</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="usage-rules">
+      <div>
+        <h4>Reglas de uso</h4>
+        <ul>
+          <li>Bone es la base. Ink y Paper conviven con Bone sin proporción fija.</li>
+          <li>Lift se usa en pequeñas dosis: la flecha del wordmark, una palabra, un botón, una etiqueta.</li>
+          <li>Lift sobre Ink y Lift sobre Bone son combinaciones aprobadas. Lift sobre Halo, prohibido.</li>
+          <li>Halo y Ember son acentos de campaña — máximo uno por pieza, nunca junto a Lift.</li>
+          <li>El contraste mínimo de texto es AA: Graphite sobre Bone / Bone sobre Ink.</li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="color: var(--mineral);">Qué evitar</h4>
+        <ul class="dont">
+          <li>No usar gradientes entre colores de la paleta.</li>
+          <li>No usar blanco puro (#FFFFFF) ni negro puro (#000000) — Bone e Ink siempre.</li>
+          <li>No saturar Lift al 100% en superficies grandes mayores al 20% del lienzo.</li>
+          <li>No introducir colores fuera de paleta para "alegrar" piezas.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 05 — Tipografía ===================== -->
+<section id="tipografia" class="section" data-screen-label="05 Tipografía">
+  <div class="wrap">
+    <header class="section-head">
+      <div class="section-num"><span>05</span><span>Tipografía</span></div>
+      <div>
+        <h2 class="section-title">Dos voces.<br>Una conversación.</h2>
+        <p class="section-lede">
+          Geist es la voz pública — directa, geométrica, sin ego. Instrument Serif es la voz íntima —
+          editorial, con espacio para respirar. Geist Mono aparece como subrayado de sistema: datos,
+          códigos, etiquetas.
+        </p>
+      </div>
+    </header>
+
+    <div class="type-pairings">
+      <div class="pairing">
+        <span class="eyebrow">Primaria · Wordmark, UI, body</span>
+        <p class="display" style="font-family: var(--font-sans); font-weight: 700; letter-spacing: -0.05em;">Geist</p>
+        <p class="sub">Sans-serif geométrico variable · 300, 400, 500, 600, 700</p>
+      </div>
+      <div class="pairing">
+        <span class="eyebrow">Editorial · Manifiesto, taglines</span>
+        <p class="display" style="font-style: italic;">Instrument Serif</p>
+        <p class="sub">Serif transicional · regular + italic</p>
+      </div>
+    </div>
+
+    <div style="margin-top: 56px;">
+      <div class="type-block">
+        <div class="meta">
+          <span class="name">H1 · Display</span>
+          Geist Bold · 96/100<br>tracking −0.045em
+        </div>
+        <div class="specimen h1">Piensa más alto.</div>
+      </div>
+      <div class="type-block">
+        <div class="meta">
+          <span class="name">H2 · Headline</span>
+          Geist Semibold · 64/68<br>tracking −0.035em
+        </div>
+        <div class="specimen h2">Una mente más clara.</div>
+      </div>
+      <div class="type-block">
+        <div class="meta">
+          <span class="name">H3 · Subhead</span>
+          Geist Medium · 40/44<br>tracking −0.02em
+        </div>
+        <div class="specimen h3">Hábitos que se sostienen.</div>
+      </div>
+      <div class="type-block">
+        <div class="meta">
+          <span class="name">Editorial · Manifiesto</span>
+          Instrument Serif Italic · 64/64<br>tracking −0.02em
+        </div>
+        <div class="specimen editorial">Un sistema, <em>no un milagro.</em></div>
+      </div>
+      <div class="type-block">
+        <div class="meta">
+          <span class="name">Body · Lectura</span>
+          Geist Regular · 18/28<br>tracking −0.005em
+        </div>
+        <div class="specimen body">
+          Mind Up no compite con suplementos. Compite con la idea de que el rendimiento mental
+          se logra por fuerza bruta. Lo que sigue es la espina dorsal estratégica que sostiene
+          cada decisión.
+        </div>
+      </div>
+      <div class="type-block">
+        <div class="meta">
+          <span class="name">Mono · Sistema</span>
+          Geist Mono Regular · 12/16<br>tracking +0.06em, MAYÚSCULAS
+        </div>
+        <div class="specimen small">Lote · MU·0426·LIFT &nbsp;·&nbsp; Producción mayo 2026 · Latam</div>
+      </div>
+    </div>
+
+    <!-- ─── Tabla de decisión ─── -->
+    <div class="subhead">
+      <div class="num"><span>05·a</span><span>Tabla de decisión</span></div>
+      <div>
+        <h3>Cuándo cada voz <em class="serif" style="color: var(--mineral);">toma la palabra.</em></h3>
+        <p>Resolver la ambigüedad antes de empezar a escribir. Esta tabla decide. Si después de leerla
+        sigues dudando, lo más probable es que la frase necesite ser más corta — no más decorada.</p>
+      </div>
+    </div>
+
+    <div class="type-decision">
+      <div class="row head">
+        <div class="cell">Voz</div>
+        <div class="cell">Cuándo usarla</div>
+        <div class="cell">Ejemplos</div>
+      </div>
+      <div class="row">
+        <div class="cell">
+          <div class="specimen-tag">Instrument Serif</div>
+          <div class="use" style="color: var(--mineral); font-size: 12px;">Italic + Regular</div>
+        </div>
+        <div class="cell">
+          <div class="use">Manifiestos. Taglines. Frases de posicionamiento. Citas de principios. Titulares editoriales en web.</div>
+        </div>
+        <div class="cell">
+          <div class="example">"Piensa más alto."<br>"Claridad como estatus."<br>"Pertenecer es elevarse."</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="cell">
+          <div class="specimen-tag geist">Geist</div>
+          <div class="use" style="color: var(--mineral); font-size: 12px;">Regular → Bold</div>
+        </div>
+        <div class="cell">
+          <div class="use">Todo lo demás. UI, body copy, packaging, CTAs, captions de IG, copy de checkout.</div>
+        </div>
+        <div class="cell">
+          <div class="example">"Iniciar protocolo →"<br>"60 cápsulas · 30 días"<br>"Ver la ciencia"</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="cell">
+          <div class="specimen-tag mono">Geist Mono</div>
+          <div class="use" style="color: var(--mineral); font-size: 12px;">Solo Regular</div>
+        </div>
+        <div class="cell">
+          <div class="use">Datos. Ingredientes. Lotes. Códigos de fórmula. Fechas. Números de estudio. Cualquier información verificable.</div>
+        </div>
+        <div class="cell">
+          <div class="example">MU·0426·LIFT<br>L-Teanina 200mg / Cafeína 100mg<br>Estudio: J. Nutr. 2008</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="golden-rule">
+      <span class="label">Regla de oro</span>
+      <span class="text">Si la frase necesita ser <strong>creída</strong>, va en Geist. Si necesita ser <strong>sentida</strong>, va en Instrument.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 06 — Voz & Tono ===================== -->
+<section id="voz" class="section" data-screen-display-label="06 Voz">
+  <div class="wrap">
+    <header class="section-head">
+      <div class="section-num"><span>06</span><span>Voz y tono</span></div>
+      <div>
+        <h2 class="section-title">Directo. Sofisticado.<br>Sin clichés.</h2>
+        <p class="section-lede">
+          Mind Up habla como alguien que ya leyó los papers, ya probó los hacks, y volvió con una conclusión
+          incómoda. No motiva: provoca. No vende: ofrece pertenencia.
+        </p>
+      </div>
+    </header>
+
+    <div class="voice-grid">
+      <div class="voice-col is">
+        <h4>Mind Up <strong style="color: var(--ink);">es</strong></h4>
+        <div class="is-list">
+          <span class="is-pill">directo</span>
+          <span class="is-pill">sofisticado</span>
+          <span class="is-pill">provocador</span>
+          <span class="is-pill">científico</span>
+          <span class="is-pill">aspiracional</span>
+          <span class="is-pill">comunidad selecta</span>
+          <span class="is-pill">editorial</span>
+          <span class="is-pill">preciso</span>
+        </div>
+      </div>
+      <div class="voice-col isnot">
+        <h4>Mind Up <strong style="color: var(--ink);">no es</strong></h4>
+        <div class="isnot-list">
+          <span class="isnot-pill">motivacional</span>
+          <span class="isnot-pill">frío</span>
+          <span class="isnot-pill">elitista sin propósito</span>
+          <span class="isnot-pill">agresivo</span>
+          <span class="isnot-pill">cliché</span>
+          <span class="isnot-pill">"hustle culture"</span>
+          <span class="isnot-pill">emoji-spam</span>
+          <span class="isnot-pill">milagroso</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tagline-block">
+      <span class="eyebrow" style="color: rgba(242,238,230,0.55);">Tagline maestro</span>
+      <p class="tagline-main">Piensa <span class="accent">más alto.</span></p>
+
+      <div class="tagline-list">
+        <div class="line"><span class="mono">Producto · Focus</span>Foco no es esfuerzo. Es química bien calibrada.</div>
+        <div class="line"><span class="mono">Producto · Sleep</span>Dormir mejor es la decisión más rentable del día.</div>
+        <div class="line"><span class="mono">Producto · Calm</span>Calma no es ausencia. Es presencia bien gestionada.</div>
+        <div class="line"><span class="mono">Comunidad</span>Aquí no inspiramos: filtramos.</div>
+        <div class="line"><span class="mono">Lanzamiento</span>Tu mente ya estaba lista. Le faltaba el sistema.</div>
+        <div class="line"><span class="mono">Web · CTA</span>Empieza a pensar como alguien que ya llegó.</div>
+      </div>
+    </div>
+
+    <h4 class="eyebrow" style="margin: 72px 0 20px;">Tono por plataforma</h4>
+    <div class="tone-grid">
+      <div class="tone-card">
+        <span class="meta">Instagram</span>
+        <h5>Provocador, editorial, denso en una sola frase.</h5>
+        <p class="quote">"Si no recuerdas lo que hiciste a las 10am, no necesitas más café. Necesitas otra arquitectura."</p>
+        <p class="note">Frases cortas, sin emojis. Tipografía como protagonista. Carrusel cuando hay datos.</p>
+      </div>
+      <div class="tone-card">
+        <span class="meta">Sitio web</span>
+        <h5>Calmado, preciso, con respaldo visible.</h5>
+        <p class="quote">"Cada fórmula declara su evidencia. No te pedimos creernos —te pedimos leernos."</p>
+        <p class="note">Headlines en Instrument Serif. Body en Geist. Datos siempre verificables en línea.</p>
+      </div>
+      <div class="tone-card">
+        <span class="meta">Packaging</span>
+        <h5>Mínimo, funcional, una palabra manda.</h5>
+        <p class="quote">"FOCUS / 60 cápsulas / Dosis activa 400mg"</p>
+        <p class="note">El nombre del producto es lo más grande. El resto, sistema mono en escala secundaria.</p>
+      </div>
+    </div>
+
+    <!-- ─── Tensión permitida ─── -->
+    <div class="subhead">
+      <div class="num"><span>06·a</span><span>Tensión permitida</span></div>
+      <div>
+        <h3>Disciplina editorial <em class="serif" style="color: var(--mineral);">+ textura humana.</em></h3>
+        <p>Mind Up no es un robot de datos. Habla con la voz de alguien que conoce la contradicción
+        del profesional moderno — el que sabe lo que debe hacer y no siempre lo hace. La tensión
+        está permitida; la queja, no. La verdad incómoda construye autoridad.</p>
+      </div>
+    </div>
+
+    <p style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--mineral); margin: 0;">
+      Mind Up puede mostrar
+    </p>
+    <ul style="list-style: none; padding: 0; margin: 14px 0 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;">
+      <li style="font-size: 15px; line-height: 1.45; color: var(--graphite); border-top: 1px solid var(--ink); padding-top: 12px;">La contradicción del profesional moderno: sabe lo que debe hacer, no siempre lo hace.</li>
+      <li style="font-size: 15px; line-height: 1.45; color: var(--graphite); border-top: 1px solid var(--ink); padding-top: 12px;">El costo real de la falta de claridad — no el burnout dramático, la decisión mediocre de las 3pm.</li>
+      <li style="font-size: 15px; line-height: 1.45; color: var(--graphite); border-top: 1px solid var(--ink); padding-top: 12px;">Verdades incómodas sobre el rendimiento cognitivo, dichas sin moralizar.</li>
+    </ul>
+
+    <div class="tension-grid">
+      <div class="tension-card">
+        <span class="num">Copy con tensión · 01</span>
+        <p class="quote">Tu problema no es la motivación. <em>Es la química del martes.</em></p>
+      </div>
+      <div class="tension-card">
+        <span class="num">Copy con tensión · 02</span>
+        <p class="quote">Nadie admite que su peor reunión <em>fue después del almuerzo.</em></p>
+      </div>
+      <div class="tension-card">
+        <span class="num">Copy con tensión · 03</span>
+        <p class="quote">No fallas por flojo. <em>Fallas por agotado.</em></p>
+      </div>
+    </div>
+
+    <h4 class="eyebrow" style="margin: 72px 0 20px;">Palabras prohibidas</h4>
+    <div class="isnot-list">
+      <span class="isnot-pill">milagro</span>
+      <span class="isnot-pill">superpoder</span>
+      <span class="isnot-pill">hack</span>
+      <span class="isnot-pill">brutal</span>
+      <span class="isnot-pill">épico</span>
+      <span class="isnot-pill">mindset (en español)</span>
+      <span class="isnot-pill">cerebro 2.0</span>
+      <span class="isnot-pill">desbloquea tu potencial</span>
+      <span class="isnot-pill">la mejor versión de ti</span>
+      <span class="isnot-pill">vibras</span>
+      <span class="isnot-pill">99% efectivo</span>
+      <span class="isnot-pill">científicamente comprobado (sin link)</span>
+      <span class="isnot-pill">optimiza tu potencia</span>
+      <span class="isnot-pill">eleva tu vibración</span>
+      <span class="isnot-pill">modo bestia</span>
+      <span class="isnot-pill">anglicismos de hustle culture</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 07 — Sistema gráfico ===================== -->
+<section id="sistema" class="section" data-screen-label="07 Sistema gráfico">
+  <div class="wrap">
+    <header class="section-head">
+      <div class="section-num"><span>07</span><span>Sistema gráfico</span></div>
+      <div>
+        <h2 class="section-title">La flecha es la marca.<br>Todo lo demás, apoya.</h2>
+        <p class="section-lede">
+          El sistema gráfico está construido alrededor de un único gesto — la flecha "up". Aparece
+          como ícono, como bullet, como patrón, como marca de capítulo. Lo demás (fotografía,
+          iconografía, patrones) existe para sostener ese gesto, nunca para competir con él.
+        </p>
+      </div>
+    </header>
+
+    <h4 class="eyebrow" style="margin: 0 0 20px;">Iconografía — sistema lineal 1.5px</h4>
+    <div class="icon-grid">
+      <div class="icon">
+        <svg viewBox="0 0 24 24"><polygon points="12,4 20,20 4,20"/></svg>
+        <span class="name">Up</span>
+      </div>
+      <div class="icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><line x1="12" y1="6" x2="12" y2="12"/><line x1="12" y1="12" x2="16" y2="14"/></svg>
+        <span class="name">Tiempo</span>
+      </div>
+      <div class="icon">
+        <svg viewBox="0 0 24 24"><path d="M6 18 L6 10 L12 4 L18 10 L18 18 Z"/><line x1="10" y1="18" x2="10" y2="14"/><line x1="14" y1="18" x2="14" y2="14"/></svg>
+        <span class="name">Hábito</span>
+      </div>
+      <div class="icon">
+        <svg viewBox="0 0 24 24"><path d="M12 4 C7 4 5 8 7 12 C5 14 6 18 10 18 C10 20 14 20 14 18 C18 18 19 14 17 12 C19 8 17 4 12 4 Z"/></svg>
+        <span class="name">Mente</span>
+      </div>
+      <div class="icon">
+        <svg viewBox="0 0 24 24"><path d="M4 18 C6 14 8 14 10 12 C12 10 14 8 16 6"/><polyline points="11,6 16,6 16,11"/></svg>
+        <span class="name">Crecer</span>
+      </div>
+      <div class="icon">
+        <svg viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="1"/><line x1="9" y1="12" x2="15" y2="12"/></svg>
+        <span class="name">Dosis</span>
+      </div>
+      <div class="icon">
+        <svg viewBox="0 0 24 24"><path d="M5 14 C5 9 9 5 14 7 C19 9 19 15 14 17 C11 18 7 17 5 14 Z"/></svg>
+        <span class="name">Sueño</span>
+      </div>
+      <div class="icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><line x1="12" y1="3" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="21"/><line x1="3" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="21" y2="12"/></svg>
+        <span class="name">Foco</span>
+      </div>
+      <div class="icon">
+        <svg viewBox="0 0 24 24"><path d="M6 12 L10 16 L18 8"/></svg>
+        <span class="name">Verificado</span>
+      </div>
+      <div class="icon">
+        <svg viewBox="0 0 24 24"><line x1="6" y1="18" x2="6" y2="10"/><line x1="12" y1="18" x2="12" y2="6"/><line x1="18" y1="18" x2="18" y2="13"/></svg>
+        <span class="name">Datos</span>
+      </div>
+      <div class="icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><polygon points="12,8 16,16 8,16"/></svg>
+        <span class="name">Energía</span>
+      </div>
+      <div class="icon">
+        <svg viewBox="0 0 24 24"><path d="M5 19 C5 14 9 11 12 11 C15 11 19 14 19 19"/><circle cx="12" cy="7" r="3"/></svg>
+        <span class="name">Comunidad</span>
+      </div>
+    </div>
+
+    <h4 class="eyebrow" style="margin: 72px 0 20px;">Patrones de apoyo</h4>
+    <div class="pattern-grid">
+      <div class="pattern arrows">
+        <span class="pname">Up Field · Pattern 01</span>
+      </div>
+      <div class="pattern dots">
+        <span class="pname">Dose Grid · Pattern 02</span>
+      </div>
+      <div class="pattern lines">
+        <span class="pname">Rhythm · Pattern 03</span>
+      </div>
+      <div class="pattern accent-block">
+        <span class="pname">Signal Strip · Pattern 04</span>
+      </div>
+    </div>
+
+    <h4 class="eyebrow" style="margin: 72px 0 20px;">Fotografía — dirección cinematográfica</h4>
+
+    <div class="cinema-ref">
+      <span class="label">Referencia de estilo</span>
+      <p class="quote">"Fotografía de revista arquitectónica <em>aplicada a personas que piensan.</em>"</p>
+    </div>
+
+    <div class="cinema">
+      <div class="cell">
+        <span class="label">Temperatura de color</span>
+        <span class="value">3200<span style="font-family: var(--font-mono); font-size: 18px; color: var(--mineral);">–</span>3800K</span>
+        <p>Nunca frío, nunca clínico. Siempre con tono cálido.</p>
+      </div>
+      <div class="cell">
+        <span class="label">Ratio sujeto / frame</span>
+        <span class="value">máx. 55%</span>
+        <p>El vacío representa la claridad mental que el producto genera.</p>
+      </div>
+      <div class="cell">
+        <span class="label">Encuadre</span>
+        <span class="value">3:4 · 4:5</span>
+        <p>Vertical editorial. Nunca paisaje motivacional ni cuadrado clásico.</p>
+      </div>
+      <div class="cell">
+        <span class="label">Profundidad</span>
+        <span class="value">f/2.8–f/4</span>
+        <p>Sujeto enfocado, contexto que respira. Bokeh limpio.</p>
+      </div>
+    </div>
+
+    <div style="margin-top: 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px;">
+      <div>
+        <h4 class="eyebrow" style="margin: 0 0 14px;">Estados permitidos del sujeto</h4>
+        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px;">
+          <li style="font-size:15px; line-height:1.45; color: var(--graphite); border-top: 1px solid var(--hairline); padding-top: 10px;"><strong style="color: var(--ink);">Concentración activa.</strong> Leyendo, escribiendo, pensando — frente a un objeto, no a la cámara.</li>
+          <li style="font-size:15px; line-height:1.45; color: var(--graphite); border-top: 1px solid var(--hairline); padding-top: 10px;"><strong style="color: var(--ink);">Transición.</strong> Caminando, preparando, comenzando. La acción capturada antes del clímax.</li>
+          <li style="font-size:15px; line-height:1.45; color: var(--graphite); border-top: 1px solid var(--hairline); padding-top: 10px;"><strong style="color: var(--ink);">Descanso consciente.</strong> No pasivo — intencional. Sentado, en silencio, mirando un punto fijo.</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="eyebrow" style="margin: 0 0 14px;">Estados prohibidos</h4>
+        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px;">
+          <li style="font-size:15px; line-height:1.45; color: var(--graphite); border-top: 1px solid var(--ink); padding-top: 10px;">Sonrisa directa a cámara.</li>
+          <li style="font-size:15px; line-height:1.45; color: var(--graphite); border-top: 1px solid var(--ink); padding-top: 10px;">Pose de "éxito" — brazos abiertos, mirada al horizonte, arms-crossed CEO.</li>
+          <li style="font-size:15px; line-height:1.45; color: var(--graphite); border-top: 1px solid var(--ink); padding-top: 10px;">Gym shots o cualquier contexto con esfuerzo físico visible.</li>
+          <li style="font-size:15px; line-height:1.45; color: var(--graphite); border-top: 1px solid var(--ink); padding-top: 10px;">Stock que podría estar en una landing de "10 hábitos para ser exitoso".</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="photo-grid" style="margin-top: 48px;">
+      <div class="photo tall">
+        <span class="ph-label">Retrato editorial · Concentración activa · 3500K</span>
+      </div>
+      <div class="photo">
+        <span class="ph-label">Producto · Bone bg · Sombra suave</span>
+      </div>
+      <div class="photo">
+        <span class="ph-label">Detalle · Macro · Textura</span>
+      </div>
+      <div class="photo">
+        <span class="ph-label">Transición · Manos · Mañana</span>
+      </div>
+      <div class="photo">
+        <span class="ph-label">Descanso consciente · Espacio personal</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 08 — Motion ===================== -->
+<section id="motion" class="section" data-screen-label="08 Motion">
+  <div class="wrap">
+    <header class="section-head">
+      <div class="section-num"><span>08</span><span>Motion</span></div>
+      <div>
+        <h2 class="section-title">La claridad <em class="muted">no rebota.</em><br>Avanza.</h2>
+        <p class="section-lede">
+          Mind Up en movimiento tiene una sola regla. Nada de spring, nada de bounce, nada
+          de animaciones autocomplacientes. La marca se mueve como piensa: con dirección,
+          sin oscilación, en una sola decisión.
+        </p>
+      </div>
+    </header>
+
+    <div class="motion-hero">
+      <div class="left">
+        <span class="marker">Principio de movimiento</span>
+        <p class="rule">La claridad no rebota. <span class="accent">Avanza.</span></p>
+      </div>
+      <div class="motion-anim">
+        <span class="axis">Y · UP</span>
+        <span class="axis right">Loop · 3.2s</span>
+        <span class="arrow-anim"></span>
+      </div>
+    </div>
+
+    <div class="motion-specs">
+      <div class="spec">
+        <span class="k">Easing</span>
+        <span class="v">cubic-bezier<br><span style="font-family: var(--font-mono); font-size: 14px; color: var(--mineral);">(.4, 0, .2, 1)</span></span>
+        <p>Ease-in-out suave. Nunca spring ni bounce.</p>
+      </div>
+      <div class="spec">
+        <span class="k">Micro</span>
+        <span class="v">280<span class="unit">ms</span></span>
+        <p>Duración base para micro-interacciones: hover, click, focus.</p>
+      </div>
+      <div class="spec">
+        <span class="k">Transición</span>
+        <span class="v">600<span class="unit">ms</span></span>
+        <p>Cambio de pantalla, modal, navegación principal.</p>
+      </div>
+      <div class="spec">
+        <span class="k">Color</span>
+        <span class="v">400<span class="unit">ms</span></span>
+        <p>Siempre hacia Bone o Ink. Nunca entre acentos directamente.</p>
+      </div>
+      <div class="spec">
+        <span class="k">Entrada</span>
+        <span class="v">+8<span class="unit">px ↑</span></span>
+        <p>Texto entrante: fade + 8px hacia arriba. Nunca desde abajo.</p>
+      </div>
+    </div>
+
+    <div class="subhead">
+      <div class="num"><span>08·a</span><span>Por plataforma</span></div>
+      <div>
+        <h3>Cada canal mueve <em class="serif" style="color: var(--mineral);">a su propio ritmo.</em></h3>
+        <p>La regla universal se calibra a cada contexto. En Stories, el contenido manda. En web,
+        la atención se gana con un solo gesto por sección. En packaging digital, el estatismo es
+        la postura por defecto.</p>
+      </div>
+    </div>
+
+    <div class="motion-platform">
+      <div class="card">
+        <span class="label">Instagram · Stories</span>
+        <h5>Corte limpio.</h5>
+        <p>Transiciones duras, sin efectos. El contenido manda. Cero parallax, cero zoom decorativo.</p>
+      </div>
+      <div class="card">
+        <span class="label">Web · mindup.com</span>
+        <h5>Scroll reveal · 20%.</h5>
+        <p>Una sola animación por sección visible. Threshold 20%. Cero stagger encadenado.</p>
+      </div>
+      <div class="card">
+        <span class="label">Packaging digital · QR</span>
+        <h5>Estático por defecto.</h5>
+        <p>Animado solo en contexto premium: lanzamiento, página de marca, transición de checkout.</p>
+      </div>
+    </div>
+
+    <div style="margin-top: 32px; padding: 24px 28px; border: 1px solid var(--hairline); border-radius: 4px;">
+      <span class="eyebrow" style="display: block; margin-bottom: 10px;">Reglas de la flecha (▲)</span>
+      <p style="margin: 0; color: var(--graphite); font-size: 15px; line-height: 1.55;">
+        Cuando la flecha se anima, sube con <strong style="color: var(--ink);">aceleración constante</strong> hasta su tope.
+        Nunca oscila. Nunca vuelve. Una sola subida por interacción. Si necesita repetirse, espera 2.4s y reaparece
+        desde el origen — no rebota.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 09 — Aplicaciones ===================== -->
+<section id="aplicaciones" class="section" data-screen-label="09 Aplicaciones">
+  <div class="wrap">
+    <header class="section-head">
+      <div class="section-num"><span>09</span><span>Aplicaciones</span></div>
+      <div>
+        <h2 class="section-title">El ADN, en contexto.</h2>
+        <p class="section-lede">
+          La marca debe sentirse igual en un frasco de 60 cápsulas, en un story de Instagram a las 7am
+          y en el hero de la web. Estos son los puntos de partida — no plantillas finales, sino la
+          gramática base.
+        </p>
+      </div>
+    </header>
+
+    <!-- ─── Jerarquía de canales ─── -->
+    <div class="subhead" style="margin-top: 0;">
+      <div class="num"><span>09·a</span><span>Jerarquía de canales</span></div>
+      <div>
+        <h3>Primeros 12 meses.<br><em class="serif" style="color: var(--mineral);">Cada canal, una función.</em></h3>
+        <p>No todo canal vende. No todo canal posiciona. La marca se construye con esta secuencia
+        clara: Instagram crea la categoría en la cabeza del target, la web la convierte en compra,
+        el packaging y la comunidad la convierten en práctica.</p>
+      </div>
+    </div>
+
+    <div class="channels">
+      <div class="channel">
+        <span class="stage">Stage 01 · Construir marca</span>
+        <h5>Instagram <em class="serif" style="color: var(--mineral);">orgánico.</em></h5>
+        <span class="platform">@mindup · feed + stories + carruseles</span>
+        <p class="function">Crear la categoría <strong style="color: var(--ink);">"Claridad Sostenida"</strong> en la mente del target.
+        Aquí no se vende — se posiciona. Frecuencia alta, copy denso, una idea por pieza.</p>
+      </div>
+      <div class="channel">
+        <span class="stage">Stage 02 · Convertir</span>
+        <h5>Web · <em class="serif" style="color: var(--mineral);">mindup.com</em></h5>
+        <span class="platform">E-commerce · página por fórmula · página del Protocolo</span>
+        <p class="function">Convertir la curiosidad generada en IG en primera compra. El copy es
+        <strong style="color: var(--ink);">más largo, más científico, más preciso</strong> que el de IG. Cada claim, con su estudio.</p>
+      </div>
+      <div class="channel">
+        <span class="stage">Stage 03 · Retener</span>
+        <h5>Packaging + <em class="serif" style="color: var(--mineral);">comunidad.</em></h5>
+        <span class="platform">Frasco · inserto · ritual · grupo cerrado</span>
+        <p class="function">Convertir compradores en practicantes del Protocolo. El packaging es el
+        primer contacto físico — <strong style="color: var(--ink);">debe sentirse como un sistema, no como un frasco.</strong></p>
+      </div>
+    </div>
+
+    <div class="app-grid">
+
+      <!-- Instagram feed -->
+      <div class="app-card ig">
+        <div class="head"><span>Instagram · Feed @mindup</span><span>9 tiles · sistema modular</span></div>
+        <div class="ig-grid">
+          <div class="ig-tile ink">
+            <div class="ig-text">Piensa <em class="serif" style="font-style: italic;">más alto.</em></div>
+            <span class="corner">01 · Manifiesto</span>
+          </div>
+          <div class="ig-tile accent">
+            <div class="ig-text mono">Lanzamiento · FOCUS · 22.05</div>
+            <span class="corner">02 · Drop</span>
+          </div>
+          <div class="ig-tile product">
+            <div class="placeholder-bottle"><div class="label">FOCUS</div></div>
+            <span class="corner">03 · Producto</span>
+          </div>
+          <div class="ig-tile bone">
+            <div class="ig-text">Más información no es más claridad.</div>
+            <span class="corner">04 · Frase</span><span class="arrow-mark"></span>
+          </div>
+          <div class="ig-tile ink">
+            <div class="ig-text mono">L-Teanina · 200mg<br>Cafeína · 100mg<br>Ratio 2:1 validado</div>
+            <span class="corner">05 · Ciencia</span>
+          </div>
+          <div class="ig-tile bone">
+            <div class="ig-text">Dormir mejor es la decisión más rentable del día.</div>
+            <span class="corner">06 · Frase</span>
+          </div>
+          <div class="ig-tile accent">
+            <div class="ig-text serif" style="font-family: var(--font-display); font-style: italic;">No inspiramos. Filtramos.</div>
+            <span class="corner">07 · Comunidad</span>
+          </div>
+          <div class="ig-tile paper">
+            <div class="ig-text mono">Q&amp;A · Episodio 04<br>"Adaptógenos sin teatro"</div>
+            <span class="corner">08 · Episodio</span><span class="arrow-mark"></span>
+          </div>
+          <div class="ig-tile ink">
+            <div class="ig-text">Empieza a pensar como <em class="serif" style="font-style: italic; color: var(--accent);">alguien que ya llegó.</em></div>
+            <span class="corner">09 · CTA</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Web hero -->
+      <div class="app-card web">
+        <div class="head"><span>Web · Hero section · mindup.com</span><span>1440 · Desktop</span></div>
+        <div class="web-frame">
+          <div class="web-nav">
+            <span class="topnav-mark"><span class="up">MIND UP</span><span class="arrow"></span></span>
+            <div class="links">
+              <span>Productos</span><span>Ciencia</span><span>Comunidad</span><span>Diario</span>
+            </div>
+            <span class="web-cta">Iniciar protocolo</span>
+          </div>
+          <div class="web-hero">
+            <div>
+              <h1>Una mente más clara <em>no es un milagro.</em><br>Es un sistema.</h1>
+              <p>Fórmulas con dosis activas reales, comunicadas con precisión editorial. Diseñadas para profesionales
+              que toman decisiones difíciles.</p>
+              <div class="cta-row">
+                <span class="btn primary">Explorar protocolos →</span>
+                <span class="btn ghost">Leer la ciencia</span>
+              </div>
+            </div>
+            <div class="web-art">
+              <div class="stack">
+                Focus · Calm · Sleep
+                <small>Tres fórmulas — un sistema</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Packaging -->
+      <div class="app-card pack">
+        <div class="head"><span>Packaging · Línea fundadora</span><span>60 cápsulas · 30 días</span></div>
+        <div class="pack-stage">
+          <div class="bottle">
+            <div class="cap"></div>
+            <div class="brand-mini">MIND&nbsp;UP<span class="arrow"></span></div>
+            <div class="strip"></div>
+            <div class="product-name">Focus</div>
+            <div class="product-meta"><span>60 cáps</span><span>400mg</span></div>
+          </div>
+          <div class="bottle light">
+            <div class="cap"></div>
+            <div class="brand-mini">MIND&nbsp;UP<span class="arrow"></span></div>
+            <div class="strip"></div>
+            <div class="product-name">Calm</div>
+            <div class="product-meta"><span>60 cáps</span><span>300mg</span></div>
+          </div>
+          <div class="bottle accent">
+            <div class="cap"></div>
+            <div class="brand-mini">MIND&nbsp;UP<span class="arrow"></span></div>
+            <div class="strip"></div>
+            <div class="product-name">Sleep</div>
+            <div class="product-meta"><span>60 cáps</span><span>200mg</span></div>
+          </div>
+        </div>
+        <div class="pack-info">
+          <div class="col">
+            <h6>Focus</h6>
+            <p>L-Teanina + cafeína. Foco prolongado sin pico ni caída.</p>
+          </div>
+          <div class="col">
+            <h6>Calm</h6>
+            <p>Ashwagandha KSM-66 + magnesio. Calma activa, no sedación.</p>
+          </div>
+          <div class="col">
+            <h6>Sleep</h6>
+            <p>Glicina + magnesio + apigenina. Sueño profundo, despertar limpio.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stories -->
+      <div class="app-card story">
+        <div class="head"><span>Stories · Vertical</span><span>1080 × 1920</span></div>
+        <div class="story-stage">
+          <div class="story-tile ink">
+            <div class="progress"></div>
+            <div>
+              <div class="st-head">Episodio 04</div>
+            </div>
+            <div class="st-text">Adaptógenos, <em class="serif" style="font-style: italic; color: var(--accent);">sin teatro.</em></div>
+          </div>
+          <div class="story-tile accent">
+            <div class="progress"></div>
+            <div>
+              <div class="st-head">Drop · 22.05</div>
+            </div>
+            <div class="st-text">Focus llega <em class="serif" style="font-style: italic;">esta semana.</em></div>
+          </div>
+        </div>
+        <div class="body">
+          <p style="margin:0; font-size:13px; color: var(--graphite);">
+            Plantilla base: 100% del fondo en un color de paleta, una sola idea, máximo 9 palabras.
+            La flecha aparece solo si refuerza el verbo "subir / mejorar".
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 10 — Comunidad ===================== -->
+<section id="comunidad" class="section" data-screen-label="10 Comunidad">
+  <div class="wrap">
+    <header class="section-head">
+      <div class="section-num"><span>10</span><span>Comunidad</span></div>
+      <div>
+        <h2 class="section-title">El Protocolo Claro <em class="muted">se practica.</em></h2>
+        <p class="section-lede">
+          La membresía a Mind Up no se declara — se practica. Comunidad no es un canal de
+          marketing: es el resultado natural de que el producto funcione y la marca confirme.
+          Aquí están los mecanismos.
+        </p>
+      </div>
+    </header>
+
+    <div class="community-hero">
+      <div class="left">
+        <span class="marker">Mecanismo de pertenencia</span>
+        <p class="declaration">No inspiramos. <span class="accent">Confirmamos.</span><br>Par a par. Nunca de arriba abajo.</p>
+        <span class="marker">El estándar es el filtro. La conversación, el premio.</span>
+      </div>
+      <div class="right">
+        <div class="community-card">
+          <span class="label">Cómo se entra</span>
+          <h5>Practicando el Protocolo.</h5>
+          <p>No hay aplicación. No hay anuncio. Se entra cuando se compra un stack y se sostiene 14 días.</p>
+        </div>
+        <div class="community-card">
+          <span class="label">Cómo se queda</span>
+          <h5>Compartiendo el ritual.</h5>
+          <p>Quien comparte su stack, su estado y su lectura del Protocolo es parte. Los espectadores se aburren y salen solos.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── El ritual compartible ─── -->
+    <div class="subhead">
+      <div class="num"><span>10·a</span><span>El ritual compartible</span></div>
+      <div>
+        <h3>Tres momentos. <em class="serif" style="color: var(--mineral);">Tres formatos.</em></h3>
+        <p>El Protocolo Claro es la unidad mínima que se puede compartir. Tres formatos
+        de contenido nativos sirven para que cualquier miembro pueda relatar su práctica
+        sin caer en el tono de influencer ni en el de testimonial.</p>
+      </div>
+    </div>
+
+    <div class="share-formats">
+      <div class="share-card">
+        <span class="num">Formato · 01</span>
+        <p class="title">Mi stack del día.</p>
+        <p>Una imagen, tres pastillas, dos líneas de copy. Se publica de mañana, no se justifica.</p>
+        <div class="stack-mini">
+          <span class="pill on">Focus</span>
+          <span class="pill">Calm</span>
+          <span class="pill">Sleep</span>
+        </div>
+      </div>
+      <div class="share-card">
+        <span class="num">Formato · 02</span>
+        <p class="title">Mi estado de claridad.</p>
+        <p>Sin métricas complejas. Una palabra: clara · turbia · ascendente. Punto.</p>
+        <div class="stack-mini">
+          <span class="pill on">clara</span>
+          <span class="pill">turbia</span>
+          <span class="pill">ascendente</span>
+        </div>
+      </div>
+      <div class="share-card">
+        <span class="num">Formato · 03</span>
+        <p class="title">Día 14. Lo que cambió.</p>
+        <p>Bitácora corta — qué cambió, qué no. Honesto. Sin moraleja. Sin "antes y después" dramático.</p>
+        <div class="stack-mini">
+          <span class="pill">cambió</span>
+          <span class="pill">no cambió</span>
+          <span class="pill on">sigo</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── Lenguaje y tono de comunidad ─── -->
+    <div class="subhead">
+      <div class="num"><span>10·b</span><span>Lenguaje de comunidad</span></div>
+      <div>
+        <h3>Las palabras importan.<br><em class="serif" style="color: var(--mineral);">El nombre define el lugar.</em></h3>
+        <p>Si los llamamos "usuarios", construimos un funnel. Si los llamamos "clientes", construimos
+        una transacción. Si los llamamos "personas que practican el Protocolo", construimos una práctica.</p>
+      </div>
+    </div>
+
+    <div class="lex-rows">
+      <div class="lex-row">
+        <span class="label">Antes</span>
+        <span class="out">Usuarios</span>
+        <span class="in">Personas que practican el Protocolo.</span>
+      </div>
+      <div class="lex-row">
+        <span class="label">Antes</span>
+        <span class="out">Clientes / Compradores</span>
+        <span class="in">Miembros del Protocolo Claro.</span>
+      </div>
+      <div class="lex-row">
+        <span class="label">Antes</span>
+        <span class="out">Comunidad</span>
+        <span class="in">El círculo. La práctica compartida.</span>
+      </div>
+      <div class="lex-row">
+        <span class="label">Antes</span>
+        <span class="out">Suplemento</span>
+        <span class="in">Fórmula. Protocolo. Sistema.</span>
+      </div>
+      <div class="lex-row">
+        <span class="label">Antes</span>
+        <span class="out">Resultados</span>
+        <span class="in">Estado. Ritmo. Continuidad.</span>
+      </div>
+    </div>
+
+    <div style="margin-top: 48px; padding: 28px 32px; background: var(--paper); border: 1px solid var(--hairline); border-radius: 4px;">
+      <span class="eyebrow" style="display: block; margin-bottom: 12px;">Tono en comunidad</span>
+      <p style="margin: 0; font-family: var(--font-display); font-size: 28px; line-height: 1.15; letter-spacing: -0.015em; color: var(--ink);">
+        Nunca motivacional. Siempre par a par.<br>
+        <em style="color: var(--mineral);">El tono es el de alguien que ya llegó, hablando con alguien que también ya llegó.</em>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== Footer ===================== -->
+<footer class="foot" data-screen-label="Footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-mark">MIND UP<span class="arrow"></span></div>
+      <div>
+        <h6>Documento</h6>
+        <p>Brand Guidelines v2.0<br>Claridad Sostenida · Mayo 2026</p>
+      </div>
+      <div>
+        <h6>Custodia</h6>
+        <p>Marca interna<br>Distribución a partners aprobada</p>
+      </div>
+      <div>
+        <h6>Próxima revisión</h6>
+        <p>Q4 2026<br>Tras primer lanzamiento</p>
+      </div>
+    </div>
+    <hr class="hr" style="margin-top: 60px;">
+    <p style="margin-top: 24px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--mineral);">
+      © 2026 Mind Up · Todos los derechos reservados · Documento confidencial · Latam
+    </p>
+  </div>
+</footer>
+
+<!-- ===================== Tweaks ===================== -->
+<div id="tweaks-root"></div>
+
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel" data-presets="react">
+/* Mind Up — Tweaks integration */
+
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "accent": "ember",
+  "background": "bone",
+  "wordmarkWeight": 500,
+  "wordmarkTracking": -80,
+  "showArrows": false
+}/*EDITMODE-END*/;
+
+function applyTweaks(t) {
+  const root = document.documentElement;
+
+  const accents = {
+    lift:  { c: '#DCF25A', ink: '#0E0E0C' },
+    halo:  { c: '#2D3FFF', ink: '#F2EEE6' },
+    ember: { c: '#FF5A2E', ink: '#0E0E0C' },
+  };
+  const a = accents[t.accent] || accents.lift;
+  root.style.setProperty('--accent', a.c);
+  root.style.setProperty('--accent-ink', a.ink);
+
+  const bgs = { bone: '#F2EEE6', paper: '#FAF7F1', warmer: '#EEE7D8' };
+  const bg = bgs[t.background] || bgs.bone;
+  root.style.setProperty('--bone', bg);
+
+  document.querySelectorAll('.wordmark, .wordmark-hero, .topnav-mark, .foot-mark, .brand-mini')
+    .forEach((el) => {
+      el.style.fontWeight = t.wordmarkWeight;
+      el.style.letterSpacing = `${t.wordmarkTracking / 1000}em`;
+    });
+
+  document.querySelectorAll('.arrow, .arrow-mark').forEach((el) => {
+    el.style.display = t.showArrows ? '' : 'none';
+  });
+}
+
+function TweaksApp() {
+  const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+  React.useEffect(() => { applyTweaks(t); }, [t]);
+  return (
+    <TweaksPanel title="Tweaks">
+      <TweakSection label="Acento">
+        <TweakRadio
+          label="Color"
+          value={t.accent}
+          options={[
+            { value: 'lift',  label: 'Lift' },
+            { value: 'halo',  label: 'Halo' },
+            { value: 'ember', label: 'Ember' },
+          ]}
+          onChange={(v) => setTweak('accent', v)}
+        />
+      </TweakSection>
+      <TweakSection label="Base">
+        <TweakRadio
+          label="Fondo"
+          value={t.background}
+          options={[
+            { value: 'bone',   label: 'Bone' },
+            { value: 'paper',  label: 'Paper' },
+            { value: 'warmer', label: 'Warm' },
+          ]}
+          onChange={(v) => setTweak('background', v)}
+        />
+      </TweakSection>
+      <TweakSection label="Wordmark">
+        <TweakRadio
+          label="Peso"
+          value={t.wordmarkWeight}
+          options={[
+            { value: 500, label: 'Med' },
+            { value: 700, label: 'Bold' },
+            { value: 800, label: 'Black' },
+          ]}
+          onChange={(v) => setTweak('wordmarkWeight', v)}
+        />
+        <TweakSlider
+          label="Tracking"
+          value={t.wordmarkTracking}
+          min={-80} max={0} step={5}
+          onChange={(v) => setTweak('wordmarkTracking', v)}
+        />
+        <TweakToggle
+          label="Flecha"
+          value={t.showArrows}
+          onChange={(v) => setTweak('showArrows', v)}
+        />
+      </TweakSection>
+    </TweaksPanel>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('tweaks-root')).render(<TweaksApp />);
+</script>
+
+</body>
+</html>
